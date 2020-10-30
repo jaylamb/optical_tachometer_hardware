@@ -10,5 +10,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [KiCad Project](https://github.com/jaylamb/optical_tachometer_hardware/issues/3)
 - [Project README](https://github.com/jaylamb/optical_tachometer_hardware/issues/2)
 - [Pre-commit hook](https://github.com/jaylamb/optical_tachometer_hardware/issues/8)
+- [KiCad official library utilities submodule](https://github.com/jaylamb/optical_tachometer_hardware/issues/9)
 
 [Unreleased]: https://github.com/jaylamb/distance_meter_hardware.git
