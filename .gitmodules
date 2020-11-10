@@ -1,3 +1,6 @@
 [submodule "utility/kicad_parts_library_jdl"]
 	path = utility/kicad_parts_library_jdl
 	url = https://github.com/jaylamb/kicad_parts_library_jdl
+[submodule "utility/kicad-library-utils"]
+	path = utility/kicad-library-utils
+	url = https://gitlab.com/kicad/libraries/kicad-library-utils.git
