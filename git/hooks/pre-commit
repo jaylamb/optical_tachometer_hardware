@@ -83,6 +83,33 @@ function script_error_check()
 	echo "pass"
 }
 
+function erc_error_check()
+{
+	message "Checking for ERC errors .......... "
+
+    local -r build_dir="$repository_dir/build/"
+
+    if [[ ! -d "$build_dir" ]]; then
+        if ! mkdir -p "$build_dir" > "/dev/null" 2>&1; then
+            echo "fail"
+            error "Aborting commit due to build directory creation failure. See below."
+            mkdir -p "$build_dir"
+            abort
+        fi
+    fi
+
+	mapfile -t schematics < <( find "$repository_dir" -name '*.sch' | sed '/utility/d' )
+
+	if ! "$repository_dir/utility/KiAuto/src/eeschema_do" run_erc -w "${schematics[@]}" "${build_dir}" > "/dev/null" 2>&1; then
+		echo "fail"
+		error "Aborting commit due to ERC error(s). See below."
+        cat "$build_dir"*.erc
+		abort
+	fi
+
+	echo "pass"
+}
+
 function main()
 {
 	script_dir=$( readlink -f "$0" ); readonly script_dir
@@ -120,6 +147,7 @@ function main()
 
 	whitespace_error_check
 	script_error_check
+    erc_error_check
 }
 
 main "$@"
