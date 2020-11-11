@@ -1,0 +1,17 @@
+# ignore build directory
+build/
+
+# ignore footprint caches
+fp-info-cache
+
+# ignore layout backups
+*.kicad_pcb-bak
+
+# ignore schematic backups
+*.sch-bak
+
+# ignore project backups
+*.pro-bak
+
+# ignore library caches
+*-cache.lib
