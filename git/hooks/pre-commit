@@ -110,6 +110,33 @@ function erc_error_check()
 	echo "pass"
 }
 
+function drc_error_check()
+{
+	message "Checking for DRC errors .......... "
+
+    local -r build_dir="$repository_dir/build/"
+
+    if [[ ! -d "$build_dir" ]]; then
+        if ! mkdir -p "$build_dir" > "/dev/null" 2>&1; then
+            echo "fail"
+            error "Aborting commit due to build directory creation failure. See below."
+            mkdir -p "$build_dir"
+            abort
+        fi
+    fi
+
+	mapfile -t layouts < <( find "$repository_dir" -name '*.kicad_pcb' | sed '/utility/d' )
+
+	if ! "$repository_dir/utility/KiAuto/src/pcbnew_do" run_drc "${layouts[@]}" "${build_dir}" > "/dev/null" 2>&1; then
+		echo "fail"
+		error "Aborting commit due to DRC error(s). See below."
+        cat "$build_dir"*.rpt
+		abort
+	fi
+
+	echo "pass"
+}
+
 function main()
 {
 	script_dir=$( readlink -f "$0" ); readonly script_dir
@@ -148,6 +175,7 @@ function main()
 	whitespace_error_check
 	script_error_check
     erc_error_check
+    drc_error_check
 }
 
 main "$@"
