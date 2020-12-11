@@ -7,3 +7,9 @@
 [submodule "utility/KiAuto"]
 	path = utility/KiAuto
 	url = https://github.com/INTI-CMNB/KiAuto.git
+[submodule "utility/kicad-symbols"]
+	path = utility/kicad-symbols
+	url = https://gitlab.com/kicad/libraries/kicad-symbols.git
+[submodule "utility/kicad-footprints"]
+	path = utility/kicad-footprints
+	url = https://gitlab.com/kicad/libraries/kicad-footprints.git

@@ -1,0 +1,7 @@
+(sym_lib_table
+  (lib (name kicad_parts_library_jdl)(type Legacy)(uri ${KIPRJMOD}/utility/kicad_parts_library_jdl/kicad_parts_library_jdl.lib)(options "")(descr ""))
+  (lib (name Connector)(type Legacy)(uri ${KIPRJMOD}/utility/kicad-symbols/Connector.lib)(options "")(descr ""))
+  (lib (name Device)(type Legacy)(uri ${KIPRJMOD}/utility/kicad-symbols/Device.lib)(options "")(descr ""))
+  (lib (name power)(type Legacy)(uri ${KIPRJMOD}/utility/kicad-symbols/power.lib)(options "")(descr ""))
+  (lib (name Transistor_BJT)(type Legacy)(uri ${KIPRJMOD}/utility/kicad-symbols/Transistor_BJT.lib)(options "")(descr ""))
+)
