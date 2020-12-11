@@ -57,10 +57,10 @@ function whitespace_error_check()
 {
 	message "Checking for whitespace errors ... "
 
-	if ! git -C "$repository_dir" diff-index --check --cached "$against" -- >/dev/null 2>&1; then
+	if ! git -C "$repository_dir" diff-index --check --cached  "$against" -- ':!:*.sch' >/dev/null 2>&1; then
 		echo "fail"
 		error "Aborting commit due to whitespace error(s). See below."
-		git -C "$repository_dir" diff-index --check --cached "$against" --
+		git -C "$repository_dir" diff-index --check --cached "$against" -- ':!:*.sch'
 		abort
 	fi
 
