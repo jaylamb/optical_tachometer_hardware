@@ -1,8 +1,8 @@
 (export (version D)
   (design
     (source /home/jamb/projects/optical_tachometer_hardware/optical_tachometer_hardware.sch)
-    (date "Mon 11 Jan 2021 04:24:49 PM PST")
-    (tool "Eeschema 5.1.8-db9833491~88~ubuntu20.04.1")
+    (date "Sat 16 Jan 2021 09:08:18 AM PST")
+    (tool "Eeschema 5.1.9-73d0e3b20d~88~ubuntu20.04.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
         (title "Optical Tachometer")
