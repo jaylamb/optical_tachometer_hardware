@@ -13,3 +13,6 @@
 [submodule "utility/kicad-footprints"]
 	path = utility/kicad-footprints
 	url = https://gitlab.com/kicad/libraries/kicad-footprints.git
+[submodule "utility/InteractiveHtmlBom"]
+	path = utility/InteractiveHtmlBom
+	url = https://github.com/openscopeproject/InteractiveHtmlBom.git

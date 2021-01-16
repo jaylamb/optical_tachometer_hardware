@@ -1,0 +1,121 @@
+#!/usr/bin/env bash
+
+# optical_tachometer_hardware
+
+#  Copyright 2021 Jay Lamb, jaylamb@gmail.com
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
+#File: generate_deliverables
+#Description: Project deliverables generation script
+
+function message()
+{
+	echo -n "$script_name: $1"
+}
+
+function error()
+{
+	>&2 echo "$script_name: $1"
+}
+
+function abort()
+{
+	if [[ "$#" -gt 0 ]]; then
+		error "$1, aborting"
+	fi
+
+	exit 1
+}
+
+function display_help_text()
+{
+	echo "NAME"
+	echo "	$script_name - Generate this project's deliverables."
+	echo "SYNOPSIS"
+	echo "	$script_name --help"
+	echo "	$script_name"
+	echo "OPTIONS"
+	echo "	--help"
+	echo "		Display this help text."
+	echo "EXAMPLES"
+	echo "	$script_name --help"
+	echo "	$script_name"
+}
+
+function generate_interactive_html_bom()
+{
+    local -r layout_file="$repository_dir/$project.kicad_pcb"
+    local -r netlist_file="$repository_dir/$project.net"
+
+	local -r options=( "--dark-mode"
+                       "--no-browser"
+                       "--dest-dir"     "$deliverables_dir"
+                       "--name-format"  "$project-bom-interactive"
+                       "--netlist-file" "$netlist_file"
+                       "--extra-fields" "Part Number,Manufacturer"
+                       "$layout_file"
+                     )
+
+	if ! "$repository_dir/utility/InteractiveHtmlBom/InteractiveHtmlBom/generate_interactive_bom.py" "${options[@]}"; then
+		error "Aborting due to interactive BOM generation error(s)."
+		abort
+	fi
+
+	echo "Interactive HTML BOM generated"
+}
+
+function main()
+{
+	local -r script_dir=$( readlink -f "$0" )
+	local -r script_name=$( basename "$script_dir" )
+	local -r repository_dir=$( dirname "$script_dir" )
+
+    local -r project_file=$(git -C "$repository_dir" ls-files '*.pro')
+    local -r project=$( basename "$project_file" .pro )
+
+	while [[ "$#" -gt 0 ]]; do
+		local argument="$1"
+		shift
+
+		case "$argument" in
+			--help)
+				display_help_text
+				exit
+				;;
+			--*)
+				;&
+			-*)
+				abort "'$argument' is not a supported option"
+				;;
+			*)
+				abort "'$argument' is not a valid argument"
+				;;
+		esac
+	done
+
+    local -r deliverables_dir="$repository_dir/deliverables/"
+
+    if [[ ! -d "$deliverables_dir" ]]; then
+        if ! mkdir -p "$deliverables_dir" > "/dev/null" 2>&1; then
+            echo "fail"
+            error "Aborting commit due to deliverables directory creation failure. See below."
+            mkdir -p "$deliverables_dir"
+            abort
+        fi
+    fi
+
+    generate_interactive_html_bom
+}
+
+main "$@"
