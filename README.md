@@ -4,7 +4,9 @@ The `optical_tachometer_hardware` project consists of a single printed circuit b
 which contains a TCRT5000 reflective sensor and its supporting circuitry. The device's
 physical interface is a three position right-angle pin header.
 
-![PCB Render](./optical_tachometer_hardware.png)
+![PCB Render (front)](./optical_tachometer_hardware.png)
+
+![PCB Render (back)](./optical_tachometer_hardware-back.png)
 
 ## Usage
 Built-up hardware is a sensor module designed to be interfaced with a General Purpose
