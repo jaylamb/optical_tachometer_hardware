@@ -9,7 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Project CHANGELOG](https://github.com/jaylamb/optical_tachometer_hardware/issues/1)
 - [KiCad Project](https://github.com/jaylamb/optical_tachometer_hardware/issues/3)
 - [Project README](https://github.com/jaylamb/optical_tachometer_hardware/issues/2)
-- [Pre-commit hook](https://github.com/jaylamb/optical_tachometer_hardware/issues/8)
-- [KiCad official library utilities submodule](https://github.com/jaylamb/optical_tachometer_hardware/issues/9)
+- [Pre-commit Hook](https://github.com/jaylamb/optical_tachometer_hardware/issues/8)
+- [KiCad official library utilities Submodule](https://github.com/jaylamb/optical_tachometer_hardware/issues/9)
+- [KiCad_parts_library_jdl Submodule](https://github.com/jaylamb/optical_tachometer_hardware/issues/13)
+- [KiAuto Features](https://github.com/jaylamb/optical_tachometer_hardware/issues/15)
+- [Schematic](https://github.com/jaylamb/optical_tachometer_hardware/issues/4)
+- [Layout](https://github.com/jaylamb/optical_tachometer_hardware/issues/5)
+- [Pre-Commit Hook](https://github.com/jaylamb/optical_tachometer_hardware/issues/8)
+- [Interactive BOM Generation](https://github.com/jaylamb/optical_tachometer_hardware/issues/18)
 
 [Unreleased]: https://github.com/jaylamb/distance_meter_hardware.git
