@@ -120,9 +120,9 @@ P 3200 4150
 F 0 "R1" H 3132 4196 50  0000 R CNN
 F 1 "100" H 3132 4105 50  0000 R CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 3200 4150 50  0001 C CNN
-F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 3200 4150 50  0001 C CNN
+F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDO0000/AOA0000C331.pdf" H 3200 4150 50  0001 C CNN
 F 4 "Panasonic" H 3200 4150 50  0001 C CNN "Manufacturer"
-F 5 "ERJ-3EKF1000V" H 3200 4150 50  0001 C CNN "Part Number"
+F 5 "ERJ-PA3F1000V" H 3200 4150 50  0001 C CNN "Part Number"
 	1    3200 4150
 	-1   0    0    -1  
 $EndComp
