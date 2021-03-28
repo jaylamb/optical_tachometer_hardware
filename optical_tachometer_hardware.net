@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/jamb/projects/optical_tachometer_hardware/optical_tachometer_hardware.sch)
-    (date "Sat 16 Jan 2021 09:08:18 AM PST")
+    (date "Sun 28 Mar 2021 12:27:57 PM PDT")
     (tool "Eeschema 5.1.9-73d0e3b20d~88~ubuntu20.04.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -48,10 +48,10 @@
     (comp (ref R1)
       (value 100)
       (footprint Resistor_SMD:R_0603_1608Metric)
-      (datasheet https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf)
+      (datasheet https://industrial.panasonic.com/cdbs/www-data/pdf/RDO0000/AOA0000C331.pdf)
       (fields
         (field (name Manufacturer) Panasonic)
-        (field (name "Part Number") ERJ-3EKF1000V))
+        (field (name "Part Number") ERJ-PA3F1000V))
       (libsource (lib Device) (part R_Small_US) (description "Resistor, small US symbol"))
       (sheetpath (names /) (tstamps /))
       (tstamp 5FD5EB48))
